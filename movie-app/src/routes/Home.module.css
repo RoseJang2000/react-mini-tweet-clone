@@ -1,0 +1,111 @@
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.loader {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 300;
+}
+
+.movies__sort {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  background-color: #fff6fa;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+}
+
+.movies__sort label {
+  margin: 0.5rem;
+  color: #111;
+  font-size: 1.1rem;
+}
+
+label select {
+  border: 1px solid #111;
+  width: 100px;
+  padding: 0.3rem;
+  border-radius: 1rem;
+  margin-left: 0.5rem;
+}
+
+.movie__sort__hidden {
+  display: none;
+}
+
+.filter__button__container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  padding-right: 3rem;
+  justify-content: flex-end;
+}
+
+.filter__button {
+  width: 7rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  text-transform: uppercase;
+  background-color: #813052;
+  color: #fff;
+  padding: 1rem;
+  border-radius: 0 0 1rem 1rem;
+}
+
+label input {
+  margin: 0 0.5rem;
+  padding: 0.3rem;
+  border-radius: 1rem;
+  border: 1px solid #111;
+}
+
+label button {
+  cursor: pointer;
+  padding: 0.3rem;
+  border-radius: 1rem;
+  border: 1px solid #111;
+}
+
+/* 
+.movies {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(20rem, 1fr));
+  grid-gap: 100px;
+  padding: 2%;
+  width: 80%;
+  padding-top: 70px;
+}
+
+@media screen and (max-width: 1300px) {
+  .movies {
+    grid-template-columns: repeat(2, minmax(20rem, 1fr));
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 1090px) {
+  .movies {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+} */
+
+.movies {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  justify-content: center;
+  padding-top: 3rem;
+}
