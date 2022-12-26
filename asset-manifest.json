@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/react-mini-tweet-clone/static/css/main.82d65505.css",
-    "main.js": "/react-mini-tweet-clone/static/js/main.5352da73.js",
+    "main.js": "/react-mini-tweet-clone/static/js/main.ffd8e0d9.js",
     "index.html": "/react-mini-tweet-clone/index.html",
     "main.82d65505.css.map": "/react-mini-tweet-clone/static/css/main.82d65505.css.map",
-    "main.5352da73.js.map": "/react-mini-tweet-clone/static/js/main.5352da73.js.map"
+    "main.ffd8e0d9.js.map": "/react-mini-tweet-clone/static/js/main.ffd8e0d9.js.map"
   },
   "entrypoints": [
     "static/css/main.82d65505.css",
-    "static/js/main.5352da73.js"
+    "static/js/main.ffd8e0d9.js"
   ]
 }
