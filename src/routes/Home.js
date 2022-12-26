@@ -1,35 +1,32 @@
 import { dbService } from 'fBase';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import Tweet from 'components/Tweet';
+import TweetFactory from 'components/TweetFactory';
 
-const Home = () => {
-  const [newTweet, setNewTweet] = useState('');
-  const onSubmit = async (event) => {
-    event.preventDefault();
-    await dbService.collection('Tweets').add({
-      newTweet,
-      createdAt: Date.now(),
-    });
-    setNewTweet('');
-  };
+const Home = ({ userObj }) => {
+  const [tweets, setTweets] = useState([]);
 
-  const onChange = (event) => {
-    const {
-      target: { value },
-    } = event;
-    setNewTweet(value);
-  };
+  useEffect(() => {
+    dbService
+      .collection('tweets')
+      .orderBy('createdAt', 'desc')
+      .onSnapshot((snapshot) => {
+        const tweetArr = snapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+        setTweets(tweetArr);
+      });
+  }, []);
+
   return (
     <div>
-      <form onSubmit={onSubmit}>
-        <input
-          type="text"
-          value={newTweet}
-          placeholder="What's on your mind?"
-          maxLength={120}
-          onChange={onChange}
-        />
-        <input type="submit" value="newTweet" />
-      </form>
+      <TweetFactory userObj={userObj} />
+      <div>
+        {tweets.map((tweet) => (
+          <Tweet key={tweet.id} tweetObj={tweet} isOwner={tweet.creatorId === userObj.uid} />
+        ))}
+      </div>
     </div>
   );
 };
