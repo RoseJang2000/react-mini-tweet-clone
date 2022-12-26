@@ -1,5 +1,6 @@
 import AuthForm from 'components/AuthForm';
 import { authService, firebaseInstance } from 'fBase';
+import { FaTwitter, FaGoogle, FaGithub } from 'react-icons/fa';
 
 const Auth = () => {
   const onSocialClick = async (event) => {
@@ -16,14 +17,15 @@ const Auth = () => {
   };
 
   return (
-    <div>
+    <div className="authContainer">
+      <FaTwitter color={'#04AAFF'} size="40" style={{ marginBottom: 30 }} />
       <AuthForm />
-      <div>
-        <button name="google" onClick={onSocialClick}>
-          Continue with Google
+      <div className="authBtns">
+        <button name="google" onClick={onSocialClick} className="authBtn">
+          Continue with Google <FaGoogle />
         </button>
-        <button name="github" onClick={onSocialClick}>
-          Continue with Github
+        <button name="github" onClick={onSocialClick} className="authBtn">
+          Continue with Github <FaGithub />
         </button>
       </div>
     </div>
